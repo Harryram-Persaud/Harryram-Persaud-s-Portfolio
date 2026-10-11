@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Harryram Persaud | Engineering Portfolio</title>
+    <title>Harry Persaud | Engineering Portfolio</title>
 
     <style>
         * {
@@ -129,6 +129,40 @@
             margin-bottom: 15px;
         }
 
+        .project.featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 30px;
+            align-items: start;
+        }
+
+        .project.featured img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            border: 1px solid #292d36;
+        }
+
+        .project.featured figcaption {
+            color: #8b919c;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .project.featured h3 {
+            font-size: 24px;
+        }
+
+        .label {
+            color: #6ea8fe;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
         .tags {
             color: #6ea8fe;
             font-size: 14px;
@@ -175,6 +209,10 @@
             section {
                 padding: 60px 7%;
             }
+
+            .project.featured {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -182,7 +220,7 @@
 <body>
 
     <nav>
-        <h2>Harryram Persaud</h2>
+        <h2>Harry Persaud</h2>
 
         <div>
             <a href="#about">About</a>
@@ -198,7 +236,7 @@
         <p>Electrical Engineering Student</p>
 
         <h1>
-            Harryram<br>
+            Harry<br>
             <span>Persaud.</span>
         </h1>
 
@@ -235,6 +273,50 @@
         <h2>Projects</h2>
 
         <div class="projects">
+
+            <div class="project featured">
+
+                <figure>
+                    <img src="img/toy-castle.jpg"
+                         alt="Four views of a 3D toy castle modeled in Fusion 360: top view, angled view, front view and a close-up of the courtyard">
+                    <figcaption>The castle in Fusion 360: top, angled, front and close-up views.</figcaption>
+                </figure>
+
+                <div>
+                    <div class="label">Featured Project</div>
+                    <h3>3D Toy Castle in Fusion 360</h3>
+
+                    <p>
+                        One of my early CAD projects involved experimenting with
+                        Fusion 360 to design a 3D computer model of a toy castle.
+                        I began by dimensioning and creating the main base of the
+                        castle, then gradually built upon the structure by adding
+                        towers and other architectural features.
+                    </p>
+
+                    <p>
+                        Throughout the design process, I explored and applied
+                        essential CAD techniques, including extrusions, cuts, and
+                        fillets, to shape the individual components and refine the
+                        overall model. This project helped me develop a stronger
+                        understanding of 3D modeling, dimensional accuracy, and how
+                        individual features can be combined to create a complete
+                        structure.
+                    </p>
+
+                    <p>
+                        As one of my first major projects using computer-aided
+                        design, it served as an important introduction to digital
+                        product design and strengthened my confidence in using
+                        Fusion 360 to bring ideas to life.
+                    </p>
+
+                    <div class="tags">
+                        Fusion 360 · 3D Modeling · CAD · Product Design
+                    </div>
+                </div>
+
+            </div>
 
             <div class="project">
                 <h3>Arduino Water Flow Sensor</h3>
@@ -338,7 +420,7 @@
 
     <footer>
 
-        © 2026 Harryram Persaud. All rights reserved.
+        © 2026 Harry Persaud. All rights reserved.
 
     </footer>
 
