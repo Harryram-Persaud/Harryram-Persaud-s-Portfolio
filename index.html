@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Harry Persaud | Engineering Portfolio</title>
+    <title>Harryram Persaud | Engineering Portfolio</title>
 
     <style>
         * {
@@ -19,199 +19,196 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #0f1115;
-            color: #f5f5f5;
+            background: #1a1f29;
+            color: #e8ecf1;
             line-height: 1.6;
         }
 
+        /* ---------- NAV ---------- */
         nav {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: #151820;
-            border-bottom: 1px solid #292d36;
-            padding: 18px 8%;
+            background: #1a1f29;
+            border-bottom: 1px solid #3b4251;
+            padding: 16px 5%;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav h2 {
-            font-size: 20px;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         nav a {
-            color: #ddd;
+            color: #aab2c0;
             text-decoration: none;
-            margin-left: 25px;
             font-size: 14px;
+            padding: 8px 14px;
+            border-radius: 0;
+            transition: background 0.2s, color 0.2s;
         }
 
         nav a:hover {
-            color: white;
+            background: #232a35;
+            color: #8fa8ff;
         }
 
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 80px 10%;
+        /* ---------- PAGE BOX (double border) ---------- */
+        .page {
+            max-width: 960px;
+            margin: 40px auto;
+            background: #242b36;
+            border: 1px solid #4a5263;
+            padding: 10px;
         }
 
-        .hero p {
-            color: #9ca3af;
-            font-size: 18px;
-            max-width: 650px;
-            margin: 20px 0;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 8vw, 90px);
-            line-height: 1;
-        }
-
-        .hero h1 span {
-            color: #6ea8fe;
-        }
-
-        .button {
-            display: inline-block;
-            width: fit-content;
-            padding: 12px 22px;
-            border: 1px solid #6ea8fe;
-            color: #6ea8fe;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-top: 15px;
-        }
-
-        .button:hover {
-            background: #6ea8fe;
-            color: #0f1115;
+        .page-inner {
+            border: 1px solid #98a0ae;
+            padding: 50px 50px 20px;
         }
 
         section {
-            padding: 90px 10%;
-            max-width: 1200px;
-            margin: auto;
+            scroll-margin-top: 90px;
+            padding: 40px 0;
+            border-top: 1px solid #5a6272;
         }
 
         section h2 {
-            font-size: 35px;
-            margin-bottom: 30px;
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #ffffff;
         }
 
+        /* ---------- HEADER ---------- */
+        .header {
+            padding-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: clamp(26px, 6.5vw, 46px);
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
+            line-height: 1.15;
+        }
+
+        .header .subtitle {
+            color: #8b94a8;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .contact-links a {
+            color: #8fa8ff;
+            text-decoration: underline;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        .contact-links a:hover {
+            color: #b5c5ff;
+        }
+
+        /* ---------- ABOUT ---------- */
         .about {
+            color: #d5dae3;
             max-width: 800px;
-            color: #b8bdc7;
         }
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .project {
-            background: #171a21;
-            border: 1px solid #292d36;
+        /* ---------- CARDS ---------- */
+        .card {
+            background: #1f2530;
+            border: 1px solid #4a5263;
+            border-radius: 0;
             padding: 25px;
-            border-radius: 10px;
+            margin-bottom: 20px;
         }
 
-        .project h3 {
+        .card:last-child {
+            margin-bottom: 0;
+        }
+
+        .card h3 {
             margin-bottom: 10px;
+            color: #ffffff;
         }
 
-        .project p {
-            color: #aeb4bf;
-            margin-bottom: 15px;
+        .card p {
+            color: #b9c0cc;
+            margin-bottom: 12px;
         }
 
-        .project.featured {
-            grid-column: 1 / -1;
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tags {
+            color: #8fa8ff;
+            font-size: 14px;
+        }
+
+        /* Toy castle layout (image + text) */
+        .card.with-image {
             display: grid;
             grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
             gap: 30px;
             align-items: start;
         }
 
-        .project.featured img {
+        .card.with-image img {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 6px;
-            border: 1px solid #292d36;
+            border-radius: 0;
+            border: 1px solid #4a5263;
         }
 
-        .project.featured figcaption {
+        .card.with-image figcaption {
             color: #8b919c;
             font-size: 13px;
             margin-top: 8px;
         }
 
-        .project.featured h3 {
-            font-size: 24px;
+        .card.with-image h3 {
+            font-size: 22px;
         }
 
-        .label {
-            color: #6ea8fe;
-            font-size: 13px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .tags {
-            color: #6ea8fe;
-            font-size: 14px;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill {
-            border: 1px solid #343944;
-            padding: 8px 14px;
-            border-radius: 20px;
-            color: #c9ced8;
-        }
-
-        .contact {
-            text-align: center;
+        /* ---------- AWARDS ---------- */
+        .award h3 {
+            font-size: 17px;
         }
 
         footer {
             text-align: center;
-            padding: 30px;
-            color: #777;
-            border-top: 1px solid #292d36;
+            padding: 25px 0 15px;
+            color: #7d8696;
+            border-top: 1px solid #5a6272;
+            font-size: 14px;
         }
 
         @media (max-width: 700px) {
-            nav {
-                flex-direction: column;
-                gap: 10px;
+            .page {
+                margin: 15px 10px;
+                padding: 6px;
+            }
+
+            .page-inner {
+                padding: 30px 18px 10px;
+            }
+
+            .card.with-image {
+                grid-template-columns: 1fr;
             }
 
             nav a {
-                margin-left: 10px;
-            }
-
-            .hero {
-                padding: 60px 7%;
-            }
-
-            section {
-                padding: 60px 7%;
-            }
-
-            .project.featured {
-                grid-template-columns: 1fr;
+                padding: 6px 10px;
+                font-size: 13px;
             }
         }
     </style>
@@ -220,61 +217,51 @@
 <body>
 
     <nav>
-        <h2>Harry Persaud</h2>
-
-        <div>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Work Experience</a>
+        <a href="#research">Research</a>
+        <a href="#awards">Licenses, Certifications &amp; Awards</a>
     </nav>
 
+    <main class="page">
+    <div class="page-inner">
 
-    <div class="hero">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>Harryram Persaud</h1>
 
-        <p>Electrical Engineering Student</p>
+            <p class="subtitle">
+                Electrical Engineering @ Stony Brook University | BAJA SAE Stony Brook Motorsports
+            </p>
 
-        <h1>
-            Harry<br>
-            <span>Persaud.</span>
-        </h1>
-
-        <p>
-            Electrical engineering student interested in automotive
-            technology, electronics, embedded systems, and electric vehicles.
-        </p>
-
-        <a class="button" href="#projects">
-            View My Projects
-        </a>
-
-    </div>
+            <div class="contact-links">
+                <a href="mailto:harrypersaud100@gmail.com">harrypersaud100@gmail.com</a>
+                <a href="https://www.linkedin.com/in/harryrampersaud" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
 
 
-    <section id="about">
+        <!-- ABOUT -->
+        <section id="about">
+            <h2>About Me</h2>
 
-        <h2>About Me</h2>
+            <p class="about">
+                I'm an Electrical Engineering student at Stony Brook University
+                with a strong interest in automotive electrical systems,
+                electronics, embedded systems, and energy efficiency.
 
-        <p class="about">
-            I'm an Electrical Engineering student at Stony Brook University
-            with a strong interest in automotive electrical systems,
-            electronics, embedded systems, and energy efficiency.
-
-            I'm currently developing my engineering skills through hands-on
-            projects involving circuits, CAD, Arduino, and electronics.
-        </p>
-
-    </section>
+                I'm currently developing my engineering skills through hands-on
+                projects involving circuits, CAD, Arduino, and electronics.
+            </p>
+        </section>
 
 
-    <section id="projects">
+        <!-- PROJECTS -->
+        <section id="projects">
+            <h2>Projects</h2>
 
-        <h2>Projects</h2>
-
-        <div class="projects">
-
-            <div class="project featured">
+            <div class="card with-image">
 
                 <figure>
                     <img src="img/toy-castle.jpg"
@@ -283,7 +270,6 @@
                 </figure>
 
                 <div>
-                    <div class="label">Featured Project</div>
                     <h3>3D Toy Castle in Fusion 360</h3>
 
                     <p>
@@ -318,111 +304,110 @@
 
             </div>
 
-            <div class="project">
-                <h3>Arduino Water Flow Sensor</h3>
-
-                <p>
-                    Built an Arduino-based system using a Hall effect
-                    water flow sensor to measure and calculate water flow.
-                </p>
-
-                <div class="tags">
-                    Arduino · C++ · Sensors · Electronics
-                </div>
+            <div class="card">
+                <h3>Clock Project</h3>
+                <p>Description coming soon.</p>
             </div>
 
-
-            <div class="project">
-                <h3>Pagani Zonda Cinque Model</h3>
-
-                <p>
-                    Designed and developed a phone-controlled model car
-                    combining mechanical design and electronics.
-                </p>
-
-                <div class="tags">
-                    CAD · Electronics · Automotive
-                </div>
+            <div class="card">
+                <h3>CNC Machine G-Code: Absolute and Relative</h3>
+                <p>Description coming soon.</p>
             </div>
 
+            <div class="card">
+                <h3>PWM Speed + Direction DC Motor Control</h3>
+                <p>Description coming soon.</p>
+            </div>
+        </section>
 
-            <div class="project">
-                <h3>Haptic Navigation Glasses</h3>
 
-                <p>
-                    Developed a wearable navigation concept using haptic
-                    feedback to communicate directional information.
-                </p>
+        <!-- WORK EXPERIENCE -->
+        <section id="experience">
+            <h2>Work Experience</h2>
 
-                <div class="tags">
-                    Inventor · CAD · Engineering Design
-                </div>
+            <div class="card">
+                <h3>Department of Buildings</h3>
+                <p>Description coming soon.</p>
             </div>
 
+            <div class="card">
+                <h3>Rock and Soul DJ Equipment and Records</h3>
+                <p>Description coming soon.</p>
+            </div>
+        </section>
 
-            <div class="project">
-                <h3>Geomagnetic Storm Research</h3>
 
+        <!-- RESEARCH -->
+        <section id="research">
+            <h2>Research</h2>
+
+            <div class="card">
+                <h3>Geomagnetic Storms</h3>
                 <p>
                     Investigated how geomagnetic storms can affect
                     aviation systems and long-distance flight operations.
                 </p>
-
-                <div class="tags">
-                    Physics · Research · Data Analysis
-                </div>
             </div>
 
-        </div>
-
-    </section>
-
-
-    <section id="skills">
-
-        <h2>Skills</h2>
-
-        <div class="skills">
-
-            <div class="skill">Circuit Analysis</div>
-            <div class="skill">Arduino</div>
-            <div class="skill">C++</div>
-            <div class="skill">Fusion 360</div>
-            <div class="skill">Autodesk Inventor</div>
-            <div class="skill">SolidWorks</div>
-            <div class="skill">LTspice</div>
-            <div class="skill">NI Multisim</div>
-            <div class="skill">CircuitJS</div>
-            <div class="skill">CAD</div>
-            <div class="skill">Electronics</div>
-            <div class="skill">Troubleshooting</div>
-
-        </div>
-
-    </section>
+            <div class="card">
+                <h3>NYU Hackathon</h3>
+                <p>Description coming soon.</p>
+            </div>
+        </section>
 
 
-    <section id="contact" class="contact">
+        <!-- LICENSES, CERTIFICATIONS & AWARDS -->
+        <section id="awards">
+            <h2>Licenses, Certifications &amp; Awards</h2>
 
-        <h2>Let's Connect</h2>
+            <div class="card award">
+                <h3>1st Place — Brooklyn Tech Hackathon | 6th Sense</h3>
+                <p>Awarded first place for developing 6th Sense, an assistive technology project combining hardware, CAD design, and haptic feedback to help users navigate their surroundings.</p>
+            </div>
 
-        <p>
-            Interested in engineering, automotive technology,
-            electronics, or collaboration?
-        </p>
+            <div class="card award">
+                <h3>NASA MAA STEM Education Project Award</h3>
+                <p>Recognized for demonstrating strong STEM knowledge, technical innovation, and problem-solving through an engineering project.</p>
+            </div>
 
-        <a class="button" href="mailto:YOUR_EMAIL@example.com">
-            Email Me
-        </a>
+            <div class="card award">
+                <h3>NOCTI Mechatronics — Level 1 Assessment Certification</h3>
+                <p>Demonstrated foundational skills in mechatronics, electronics, mechanical systems, controls, and technical problem-solving.</p>
+            </div>
 
-    </section>
+            <div class="card award">
+                <h3>YouScience Digital Electronics Award</h3>
+                <p>Recognized for demonstrating knowledge and skills in digital electronics, circuits, and electronic systems.</p>
+            </div>
+
+            <div class="card award">
+                <h3>OSHA 30-Hour Construction Safety and Health</h3>
+                <p>Completed 30 hours of training covering construction safety, workplace hazards, and OSHA safety standards.</p>
+            </div>
+
+            <div class="card award">
+                <h3>Autodesk Inventor Certified</h3>
+                <p>Demonstrated proficiency in Autodesk Inventor for 3D CAD modeling, mechanical design, and engineering documentation.</p>
+            </div>
+
+            <div class="card award">
+                <h3>RIT PLTW CIM Endorsement</h3>
+                <p>Earned recognition through the Rochester Institute of Technology (RIT) Project Lead The Way (PLTW) Computer Integrated Manufacturing (CIM) program by successfully completing the course and End-of-Course assessment. Demonstrated knowledge of computer-integrated manufacturing, CAD/CAM, automation, robotics, and engineering design.</p>
+            </div>
+
+            <div class="card award">
+                <h3>Brooklyn Tech CTE Endorsement</h3>
+                <p>Earned a Career and Technical Education (CTE) endorsement from Brooklyn Technical High School, demonstrating completion of a rigorous technical education program and development of practical skills in engineering, technology, problem-solving, and career readiness.</p>
+            </div>
+        </section>
 
 
-    <footer>
+        <footer>
+            © 2026 Harryram Persaud. All rights reserved.
+        </footer>
 
-        © 2026 Harry Persaud. All rights reserved.
-
-    </footer>
+    </div>
+    </main>
 
 </body>
 </html>
