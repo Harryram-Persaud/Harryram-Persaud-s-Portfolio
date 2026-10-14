@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Harryram Persaud | Engineering Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1f29;
+            color: #e8ecf1;
+            line-height: 1.6;
+        }
+
+        /* ---------- NAV ---------- */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #1a1f29;
+            border-bottom: 1px solid #3b4251;
+            padding: 16px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #aab2c0;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 14px;
+            border-radius: 0;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        nav a:hover {
+            background: #232a35;
+            color: #8fa8ff;
+        }
+
+        /* ---------- PAGE BOX (double border) ---------- */
+        .page {
+            max-width: 960px;
+            margin: 40px auto;
+            background: #242b36;
+            border: 1px solid #4a5263;
+            padding: 10px;
+        }
+
+        .page-inner {
+            border: 1px solid #98a0ae;
+            padding: 50px 50px 30px;
+        }
+
+        section {
+            scroll-margin-top: 90px;
+            padding: 40px 0;
+            border-top: 1px solid #5a6272;
+        }
+
+        section h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        /* ---------- HEADER ---------- */
+        .header {
+            padding-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: clamp(26px, 6.5vw, 46px);
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
+            line-height: 1.15;
+        }
+
+        .header .subtitle {
+            color: #8b94a8;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .contact-links a {
+            color: #8fa8ff;
+            text-decoration: underline;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        .contact-links a:hover {
+            color: #b5c5ff;
+        }
+
+        /* ---------- ABOUT ---------- */
+        .about {
+            color: #d5dae3;
+            max-width: 800px;
+        }
+
+        /* ---------- CARDS ---------- */
+        .card {
+            background: #1f2530;
+            border: 1px solid #4a5263;
+            border-radius: 0;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .card:last-child {
+            margin-bottom: 0;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .card p {
+            color: #b9c0cc;
+            margin-bottom: 12px;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tags {
+            color: #8fa8ff;
+            font-size: 14px;
+        }
+
+        /* Image + text layout (image left, text right) */
+        .card.with-image {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 30px;
+            align-items: start;
+        }
+
+        .card.with-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+            border: 1px solid #4a5263;
+        }
+
+        figcaption {
+            color: #8b919c;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .card.with-image h3 {
+            font-size: 22px;
+        }
+
+        /* ---------- CLOCK PROJECT ---------- */
+        .card.clock h3 {
+            font-size: 22px;
+        }
+
+        .card.clock figure {
+            margin: 18px 0;
+        }
+
+        .card.clock figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #4a5263;
+            background: #ffffff;
+        }
+
+        .clock-pair {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            align-items: start;
+            margin: 18px 0;
+        }
+
+        .clock-pair figure {
+            margin: 0 !important;
+        }
+
+        .clock-pair figure.narrow img {
+            max-width: 100%;
+        }
+
+        .clock-pair p {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* ---------- AWARDS ---------- */
+        .award h3 {
+            font-size: 17px;
+        }
+
+        /* ---------- FOOTER / TITLE BLOCK ---------- */
+        footer {
+            padding-top: 30px;
+            border-top: 1px solid #5a6272;
+        }
+
+        .title-block {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            border: 2px solid #8a93a6;
+            background: #1d2229;
+        }
+
+        .tb-cell {
+            padding: 12px 20px;
+            border-right: 2px solid #8a93a6;
+            border-bottom: 2px solid #8a93a6;
+        }
+
+        .tb-cell:nth-child(3n) {
+            border-right: none;
+        }
+
+        .tb-cell.last-row {
+            border-bottom: none;
+        }
+
+        .tb-name {
+            grid-row: 1 / span 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: none;
+        }
+
+        .tb-label {
+            display: block;
+            font-size: 14px;
+            color: #9aa3b5;
+        }
+
+        .tb-value {
+            display: block;
+            font-size: 20px;
+            color: #e8ecf1;
+            overflow-wrap: anywhere;
+        }
+
+        .tb-name .tb-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.15;
+        }
+
+        .tb-value a {
+            color: #8fa8ff;
+            text-decoration: underline;
+        }
+
+        .tb-value a:hover {
+            color: #b5c5ff;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #7d8696;
+            font-size: 13px;
+            margin-top: 18px;
+        }
+
+        @media (max-width: 700px) {
+            .page {
+                margin: 15px 10px;
+                padding: 6px;
+            }
+
+            .page-inner {
+                padding: 30px 18px 20px;
+            }
+
+            .card.with-image,
+            .clock-pair {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                padding: 6px 10px;
+                font-size: 13px;
+            }
+
+            .title-block {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .tb-name {
+                grid-column: 1 / span 2;
+                grid-row: auto;
+                border-bottom: 2px solid #8a93a6;
+            }
+
+            .tb-cell:nth-child(3n) {
+                border-right: 2px solid #8a93a6;
+            }
+
+            .tb-cell:nth-child(even) {
+                border-right: none;
+            }
+
+            .tb-value {
+                font-size: 17px;
+            }
+
+            .tb-name .tb-value {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Work Experience</a>
+        <a href="#research">Research</a>
+        <a href="#awards">Licenses, Certifications &amp; Awards</a>
+    </nav>
+
+    <main class="page">
+    <div class="page-inner">
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1>Harryram Persaud</h1>
+
+            <p class="subtitle">
+                Electrical Engineering @ Stony Brook University | BAJA SAE Stony Brook Motorsports
+            </p>
+
+            <div class="contact-links">
+                <a href="mailto:harrypersaud100@gmail.com">harrypersaud100@gmail.com</a>
+                <a href="https://www.linkedin.com/in/harryrampersaud" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+
+
+        <!-- ABOUT -->
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p class="about">
+                I'm an Electrical Engineering student at Stony Brook University
+                with a strong interest in automotive electrical systems,
+                electronics, embedded systems, and energy efficiency.
+
+                I'm currently developing my engineering skills through hands-on
+                projects involving circuits, CAD, Arduino, and electronics.
+            </p>
+        </section>
+
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <!-- TOY CASTLE -->
+            <div class="card with-image">
+
+                <figure>
+                    <img src="img/toy-castle.jpg"
+                         alt="Four views of a 3D toy castle modeled in Fusion 360: top view, angled view, front view and a close-up of the courtyard">
+                    <figcaption>The castle in Fusion 360: top, angled, front and close-up views.</figcaption>
+                </figure>
+
+                <div>
+                    <h3>Toy Castle 3D CAD Model | Autodesk Fusion 360</h3>
+
+                    <p>
+                        Developed my first CAD project by designing a 3D toy
+                        castle in Autodesk Fusion 360. Created a dimensioned
+                        base and modeled towers and architectural features using
+                        extrusions, cut operations, and fillets. Applied
+                        foundational parametric modeling techniques to define
+                        geometry, refine component features, and assemble a
+                        cohesive 3D structure. This project introduced me to
+                        engineering design workflows and strengthened my
+                        understanding of dimensional constraints, feature-based
+                        modeling, and CAD software.
+                    </p>
+
+                    <div class="tags">
+                        Fusion 360 · 3D Modeling · CAD · Product Design
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CLOCK PROJECT -->
+            <div class="card clock">
+                <h3>24-Hour Digital Clock | Multisim</h3>
+
+                <p>
+                    A 24-hour digital clock designed and simulated in Multisim,
+                    built from MSI counters, JK flip-flops, logic gates, and
+                    seven-segment displays. This project shows my fundamentals
+                    in digital logic design and my ability to understand logic
+                    gates, seven-segment displays, and numerical conversions.
+                </p>
+
+                <figure>
+                    <img src="img/clock-full.png"
+                         alt="Full Multisim schematic of the 24-hour digital clock showing the hours, minutes, and seconds sections, with a reset push button at the bottom">
+                    <figcaption>Full Multisim design: hours, minutes, and seconds, plus the reset push button.</figcaption>
+                </figure>
+
+                <div class="clock-pair">
+                    <figure>
+                        <img src="img/clock-seconds.png"
+                             alt="Seconds section of the clock using four JK flip-flops and one MSI counter, with seven-segment displays showing 5 and 0">
+                        <figcaption>Seconds section: four JK flip-flops and an MSI counter.</figcaption>
+                        <p>
+                            JK flip-flops would work in a similar function to the
+                            MSI, but it takes multiple (4) JK flip-flops to create
+                            1 MSI, which makes it impractical. That is why I used
+                            them only once.
+                        </p>
+                    </figure>
+
+                    <figure class="narrow">
+                        <img src="img/clock-minutes.png"
+                             alt="Minutes section of the clock with an MSI counter driving a seven-segment display showing 5">
+                        <figcaption>Minutes section: MSI counter driving a seven-segment display.</figcaption>
+                        <p>
+                            The MSI uses the previous input to add to the clock
+                            and count up on the seven-segment display. Because a
+                            clock counts every 60 seconds, I first used an MSI to
+                            capture the value 9, then the value 6, so it can
+                            count the full 60 seconds.
+                        </p>
+                    </figure>
+                </div>
+
+                <p>
+                    <strong>Note:</strong> The lights at the end of the hex
+                    displays show the numbers in binary, which I used to double
+                    check my work.
+                </p>
+
+                <figure>
+                    <img src="img/clock-auto-reset.png"
+                         alt="Auto reset logic at the top of the clock, with AND gates and buffers feeding the hour displays">
+                    <figcaption>Auto reset logic near the top of the clock.</figcaption>
+                </figure>
+
+                <p>
+                    The auto reset feature (shown above) sends the clock back to
+                    0 after it hits 24 hours. The design also has a push button
+                    at the bottom that resets the whole clock.
+                </p>
+
+                <div class="tags">
+                    Multisim · Digital Logic · MSI Counters · JK Flip-Flops · Seven-Segment Displays
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>CNC Machine G-Code: Absolute and Relative</h3>
+                <p>Description coming soon.</p>
+            </div>
+
+            <div class="card">
+                <h3>PWM Speed + Direction DC Motor Control</h3>
+                <p>Description coming soon.</p>
+            </div>
+        </section>
+
+
+        <!-- WORK EXPERIENCE -->
+        <section id="experience">
+            <h2>Work Experience</h2>
+
+            <div class="card">
+                <h3>Department of Buildings</h3>
+                <p>Description coming soon.</p>
+            </div>
+
+            <div class="card">
+                <h3>Rock and Soul DJ Equipment and Records</h3>
+                <p>Description coming soon.</p>
+            </div>
+        </section>
+
+
+        <!-- RESEARCH -->
+        <section id="research">
+            <h2>Research</h2>
+
+            <div class="card">
+                <h3>Geomagnetic Storms</h3>
+                <p>
+                    Investigated how geomagnetic storms can affect
+                    aviation systems and long-distance flight operations.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>NYU Hackathon</h3>
+                <p>Description coming soon.</p>
+            </div>
+        </section>
+
+
+        <!-- LICENSES, CERTIFICATIONS & AWARDS -->
+        <section id="awards">
+            <h2>Licenses, Certifications &amp; Awards</h2>
+
+            <div class="card award">
+                <h3>1st Place — Brooklyn Tech Hackathon | 6th Sense</h3>
+                <p>Awarded first place for developing 6th Sense, an assistive technology project combining hardware, CAD design, and haptic feedback to help users navigate their surroundings.</p>
+            </div>
+
+            <div class="card award">
+                <h3>NASA MAA STEM Education Project Award</h3>
+                <p>Recognized for demonstrating strong STEM knowledge, technical innovation, and problem-solving through an engineering project.</p>
+            </div>
+
+            <div class="card award">
+                <h3>NOCTI Mechatronics — Level 1 Assessment Certification</h3>
+                <p>Demonstrated foundational skills in mechatronics, electronics, mechanical systems, controls, and technical problem-solving.</p>
+            </div>
+
+            <div class="card award">
+                <h3>YouScience Digital Electronics Award</h3>
+                <p>Recognized for demonstrating knowledge and skills in digital electronics, circuits, and electronic systems.</p>
+            </div>
+
+            <div class="card award">
+                <h3>OSHA 30-Hour Construction Safety and Health</h3>
+                <p>Completed 30 hours of training covering construction safety, workplace hazards, and OSHA safety standards.</p>
+            </div>
+
+            <div class="card award">
+                <h3>Autodesk Inventor Certified</h3>
+                <p>Demonstrated proficiency in Autodesk Inventor for 3D CAD modeling, mechanical design, and engineering documentation.</p>
+            </div>
+
+            <div class="card award">
+                <h3>RIT PLTW CIM Endorsement</h3>
+                <p>Earned recognition through the Rochester Institute of Technology (RIT) Project Lead The Way (PLTW) Computer Integrated Manufacturing (CIM) program by successfully completing the course and End-of-Course assessment. Demonstrated knowledge of computer-integrated manufacturing, CAD/CAM, automation, robotics, and engineering design.</p>
+            </div>
+
+            <div class="card award">
+                <h3>Brooklyn Tech CTE Endorsement</h3>
+                <p>Earned a Career and Technical Education (CTE) endorsement from Brooklyn Technical High School, demonstrating completion of a rigorous technical education program and development of practical skills in engineering, technology, problem-solving, and career readiness.</p>
+            </div>
+        </section>
+
+
+        <!-- FOOTER: TITLE BLOCK -->
+        <footer>
+            <div class="title-block">
+
+                <div class="tb-cell tb-name">
+                    <span class="tb-label">Drawn by</span>
+                    <span class="tb-value">Harryram Persaud</span>
+                </div>
+
+                <div class="tb-cell">
+                    <span class="tb-label">Contact</span>
+                    <span class="tb-value"><a href="mailto:harrypersaud100@gmail.com">harrypersaud100@gmail.com</a></span>
+                </div>
+
+                <div class="tb-cell">
+                    <span class="tb-label">Rev</span>
+                    <span class="tb-value">A, October 2026</span>
+                </div>
+
+                <div class="tb-cell last-row">
+                    <span class="tb-label">Location</span>
+                    <span class="tb-value">New York</span>
+                </div>
+
+                <div class="tb-cell last-row">
+                    <span class="tb-label">Also on</span>
+                    <span class="tb-value"><a href="https://www.linkedin.com/in/harryrampersaud" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+                </div>
+
+            </div>
+
+            <p class="copyright">© 2026 Harryram Persaud. All rights reserved.</p>
+        </footer>
+
+    </div>
+    </main>
+
+</body>
+</html>
