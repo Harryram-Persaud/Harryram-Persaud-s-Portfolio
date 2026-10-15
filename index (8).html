@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Harryram Persaud | Engineering Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1f29;
+            color: #e8ecf1;
+            line-height: 1.6;
+        }
+
+        /* ---------- NAV ---------- */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #1a1f29;
+            border-bottom: 1px solid #3b4251;
+            padding: 16px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #aab2c0;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 14px;
+            border-radius: 0;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        nav a:hover {
+            background: #232a35;
+            color: #8fa8ff;
+        }
+
+        /* ---------- PAGE BOX (double border) ---------- */
+        .page {
+            max-width: 1180px;
+            margin: 50px auto;
+            background: #242b36;
+            border: 1px solid #4a5263;
+            padding: 16px;
+        }
+
+        .page-inner {
+            border: 1px solid #98a0ae;
+            padding: 60px 64px 36px;
+        }
+
+        section {
+            scroll-margin-top: 90px;
+            padding: 40px 0;
+            border-top: 1px solid #5a6272;
+        }
+
+        section h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        /* ---------- HEADER ---------- */
+        .header {
+            padding-bottom: 40px;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 44px;
+        }
+
+        .profile-photo {
+            flex: 0 0 auto;
+            border: 1px solid #98a0ae;
+            padding: 8px;
+            background: #1d2229;
+        }
+
+        .profile-photo img {
+            display: block;
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .header-text {
+            min-width: 0;
+        }
+
+        .header h1 {
+            font-size: clamp(26px, 6.5vw, 46px);
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
+            line-height: 1.15;
+        }
+
+        .header .subtitle {
+            color: #8b94a8;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .contact-links a {
+            color: #8fa8ff;
+            text-decoration: underline;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        .contact-links a:hover {
+            color: #b5c5ff;
+        }
+
+        /* ---------- ABOUT ---------- */
+        .about {
+            color: #d5dae3;
+            max-width: 800px;
+        }
+
+        /* ---------- CARDS ---------- */
+        .card {
+            background: #1f2530;
+            border: 1px solid #4a5263;
+            border-radius: 0;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .card:last-child {
+            margin-bottom: 0;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .card p {
+            color: #b9c0cc;
+            margin-bottom: 12px;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tags {
+            color: #8fa8ff;
+            font-size: 14px;
+        }
+
+        /* Image + text layout (image left, text right) */
+        .card.with-image {
+            display: block;
+        }
+
+        .card.with-image figure {
+            max-width: 720px;
+            margin: 0 auto 28px;
+        }
+
+        .card.with-image figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+            border: 1px solid #4a5263;
+        }
+
+        .card.with-image figcaption {
+            text-align: center;
+        }
+
+        .card.with-image .text {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        figcaption {
+            color: #8b919c;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .card.with-image h3 {
+            font-size: 22px;
+        }
+
+        /* ---------- CLOCK PROJECT ---------- */
+        .card.clock h3 {
+            font-size: 22px;
+        }
+
+        .card.clock figure {
+            margin: 18px 0;
+        }
+
+        .card.clock figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #4a5263;
+            background: #ffffff;
+        }
+
+        .clock-pair {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            align-items: start;
+            margin: 18px 0;
+        }
+
+        .clock-pair figure {
+            margin: 0 !important;
+        }
+
+        .clock-pair figure.narrow img {
+            max-width: 100%;
+        }
+
+        .clock-pair figure {
+            background: #1a1f29;
+            border: 1px solid #4a5263;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card.clock .clock-pair figure img {
+            width: auto;
+            max-width: 100%;
+            max-height: 300px;
+            margin: 0 auto;
+        }
+
+        .clock-pair figcaption {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            margin-top: 14px;
+        }
+
+        .clock-pair p {
+            font-size: 14px;
+            margin-top: 8px;
+            text-align: left;
+        }
+
+        /* ---------- CNC PROJECT ---------- */
+        .card.cnc h3 {
+            font-size: 22px;
+        }
+
+        .card.cnc figure {
+            margin: 18px 0;
+        }
+
+        .card.cnc figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #4a5263;
+        }
+
+        .cnc-hero {
+            max-width: 640px;
+            margin: 18px auto 24px;
+        }
+
+        .cnc-progress-label {
+            color: #ffffff;
+            font-size: 16px;
+            margin: 24px 0 10px;
+        }
+
+        .cnc-progress {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            align-items: start;
+            margin-bottom: 24px;
+        }
+
+        .cnc-progress figure {
+            margin: 0 !important;
+        }
+
+        /* ---------- PWM PROJECT ---------- */
+        .card.pwm h3 {
+            font-size: 22px;
+        }
+
+        .pwm-media {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            align-items: stretch;
+            margin: 18px 0 24px;
+        }
+
+        .pwm-media figure {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pwm-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #4a5263;
+        }
+
+        .coming-soon {
+            flex: 1;
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            border: 1px dashed #5a6272;
+            background: #1a1f29;
+            color: #aab2c0;
+            font-size: 16px;
+        }
+
+        /* ---------- RESEARCH ---------- */
+        .card.research h3 {
+            font-size: 22px;
+        }
+
+        .meta {
+            color: #8fa8ff;
+            font-size: 14px;
+            margin-bottom: 16px !important;
+        }
+
+        .card.research h4 {
+            color: #ffffff;
+            font-size: 16px;
+            margin: 22px 0 10px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin: 20px 0;
+        }
+
+        .stat {
+            background: #1a1f29;
+            border: 1px solid #4a5263;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-num {
+            display: block;
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 13px;
+            color: #9aa3b5;
+            margin-top: 4px;
+        }
+
+        .card.research ul {
+            margin: 0 0 12px 20px;
+            color: #b9c0cc;
+        }
+
+        .card.research li {
+            margin-bottom: 6px;
+        }
+
+        .link-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .link-btn {
+            display: inline-block;
+            color: #8fa8ff;
+            text-decoration: none;
+            border: 1px solid #8fa8ff;
+            padding: 10px 16px;
+            font-size: 14px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .link-btn:hover {
+            background: #8fa8ff;
+            color: #1a1f29;
+        }
+
+        /* ---------- WORK EXPERIENCE ---------- */
+        .card.job h3 {
+            font-size: 22px;
+        }
+
+        .job-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin: 22px 0;
+        }
+
+        .job-gallery figure {
+            margin: 0;
+            background: #1a1f29;
+            border: 1px solid #4a5263;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .job-gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .job-gallery figcaption {
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        /* ---------- CREDENTIALS TABLE ---------- */
+        .cred-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1f2530;
+            border: 1px solid #4a5263;
+        }
+
+        .cred-table th {
+            text-align: left;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #9aa3b5;
+            background: #1a1f29;
+            padding: 14px 18px;
+            border-bottom: 2px solid #8a93a6;
+        }
+
+        .cred-table td {
+            padding: 16px 18px;
+            vertical-align: top;
+            border-bottom: 1px solid #3b4251;
+            color: #b9c0cc;
+            font-size: 15px;
+        }
+
+        .cred-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cred-table tbody tr:hover {
+            background: #232a35;
+        }
+
+        .cred-table .cred-name {
+            color: #ffffff;
+            font-weight: 700;
+            width: 32%;
+        }
+
+        .cred-table .cred-type {
+            width: 15%;
+            white-space: nowrap;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 12px;
+            color: #8fa8ff;
+            border: 1px solid #8fa8ff;
+            padding: 3px 10px;
+        }
+
+        /* ---------- AWARDS ---------- */
+        .award h3 {
+            font-size: 17px;
+        }
+
+        /* ---------- FOOTER / TITLE BLOCK ---------- */
+        footer {
+            padding-top: 30px;
+            border-top: 1px solid #5a6272;
+        }
+
+        .title-block {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            border: 2px solid #8a93a6;
+            background: #1d2229;
+        }
+
+        .tb-cell {
+            padding: 12px 20px;
+            border-right: 2px solid #8a93a6;
+            border-bottom: 2px solid #8a93a6;
+        }
+
+        .tb-cell:nth-child(3n) {
+            border-right: none;
+        }
+
+        .tb-cell.last-row {
+            border-bottom: none;
+        }
+
+        .tb-name {
+            grid-row: 1 / span 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: none;
+        }
+
+        .tb-label {
+            display: block;
+            font-size: 14px;
+            color: #9aa3b5;
+        }
+
+        .tb-value {
+            display: block;
+            font-size: 20px;
+            color: #e8ecf1;
+            overflow-wrap: anywhere;
+        }
+
+        .tb-name .tb-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.15;
+        }
+
+        .tb-value a {
+            color: #8fa8ff;
+            text-decoration: underline;
+        }
+
+        .tb-value a:hover {
+            color: #b5c5ff;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #7d8696;
+            font-size: 13px;
+            margin-top: 18px;
+        }
+
+        @media (max-width: 700px) {
+            .page {
+                margin: 15px 10px;
+                padding: 6px;
+            }
+
+            .page-inner {
+                padding: 30px 18px 20px;
+            }
+
+            .card.with-image,
+            .clock-pair,
+            .cnc-progress,
+            .pwm-media,
+            .stats,
+            .job-gallery {
+                grid-template-columns: 1fr;
+            }
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+
+            .profile-photo img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .cred-table thead {
+                display: none;
+            }
+
+            .cred-table,
+            .cred-table tbody,
+            .cred-table tr,
+            .cred-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .cred-table tr {
+                border-bottom: 1px solid #3b4251;
+                padding: 10px 0;
+            }
+
+            .cred-table tr:last-child {
+                border-bottom: none;
+            }
+
+            .cred-table td {
+                border-bottom: none;
+                padding: 4px 16px;
+            }
+
+            .cred-table .cred-name,
+            .cred-table .cred-type {
+                width: 100%;
+            }
+
+            nav a {
+                padding: 6px 10px;
+                font-size: 13px;
+            }
+
+            .title-block {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .tb-name {
+                grid-column: 1 / span 2;
+                grid-row: auto;
+                border-bottom: 2px solid #8a93a6;
+            }
+
+            .tb-cell:nth-child(3n) {
+                border-right: 2px solid #8a93a6;
+            }
+
+            .tb-cell:nth-child(even) {
+                border-right: none;
+            }
+
+            .tb-value {
+                font-size: 17px;
+            }
+
+            .tb-name .tb-value {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Work Experience</a>
+        <a href="#research">Research</a>
+        <a href="#awards">Licenses, Certifications &amp; Awards</a>
+    </nav>
+
+    <main class="page">
+    <div class="page-inner">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-top">
+                <div class="profile-photo">
+                    <img src="img/profile.jpg" alt="Portrait of Harryram Persaud">
+                </div>
+
+                <div class="header-text">
+                    <h1>Harryram Persaud</h1>
+
+                    <p class="subtitle">
+                        Electrical Engineering @ Stony Brook University | BAJA SAE Stony Brook Motorsports
+                    </p>
+
+                    <div class="contact-links">
+                        <a href="mailto:harrypersaud100@gmail.com">harrypersaud100@gmail.com</a>
+                        <a href="https://www.linkedin.com/in/harryrampersaud" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ABOUT -->
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p class="about">
+                I'm an Electrical Engineering student at Stony Brook University
+                with a strong interest in automotive electrical systems,
+                electronics, embedded systems, and energy efficiency.
+
+                I'm currently developing my engineering skills through hands-on
+                projects involving circuits, CAD, Arduino, and electronics.
+            </p>
+        </section>
+
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <!-- TOY CASTLE -->
+            <div class="card with-image">
+
+                <figure>
+                    <img src="img/toy-castle.jpg"
+                         alt="Four views of a 3D toy castle modeled in Fusion 360: top view, angled view, front view and a close-up of the courtyard">
+                    <figcaption>The castle in Fusion 360: top, angled, front and close-up views.</figcaption>
+                </figure>
+
+                <div class="text">
+                    <h3>Toy Castle 3D CAD Model | Autodesk Fusion 360</h3>
+
+                    <p>
+                        Developed my first CAD project by designing a 3D toy
+                        castle in Autodesk Fusion 360. Created a dimensioned
+                        base and modeled towers and architectural features using
+                        extrusions, cut operations, and fillets. Applied
+                        foundational parametric modeling techniques to define
+                        geometry, refine component features, and assemble a
+                        cohesive 3D structure. This project introduced me to
+                        engineering design workflows and strengthened my
+                        understanding of dimensional constraints, feature-based
+                        modeling, and CAD software.
+                    </p>
+
+                    <div class="tags">
+                        Fusion 360 · 3D Modeling · CAD · Product Design
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CLOCK PROJECT -->
+            <div class="card clock">
+                <h3>24-Hour Digital Clock | Multisim</h3>
+
+                <p>
+                    A 24-hour digital clock designed and simulated in Multisim,
+                    built from MSI counters, JK flip-flops, logic gates, and
+                    seven-segment displays. This project shows my fundamentals
+                    in digital logic design and my ability to understand logic
+                    gates, seven-segment displays, and numerical conversions.
+                </p>
+
+                <figure>
+                    <img src="img/clock-full.png"
+                         alt="Full Multisim schematic of the 24-hour digital clock showing the hours, minutes, and seconds sections, with a reset push button at the bottom">
+                    <figcaption>Full Multisim design: hours, minutes, and seconds, plus the reset push button.</figcaption>
+                </figure>
+
+                <div class="clock-pair">
+                    <figure>
+                        <img src="img/clock-seconds.png"
+                             alt="Seconds section of the clock using four JK flip-flops and one MSI counter, with seven-segment displays showing 5 and 0">
+                        <figcaption>Seconds section: four JK flip-flops and an MSI counter.</figcaption>
+                        <p>
+                            JK flip-flops would work in a similar function to the
+                            MSI, but it takes multiple (4) JK flip-flops to create
+                            1 MSI, which makes it impractical. That is why I used
+                            them only once.
+                        </p>
+                    </figure>
+
+                    <figure class="narrow">
+                        <img src="img/clock-minutes.png"
+                             alt="Minutes section of the clock with an MSI counter driving a seven-segment display showing 5">
+                        <figcaption>Minutes section: MSI counter driving a seven-segment display.</figcaption>
+                        <p>
+                            The MSI uses the previous input to add to the clock
+                            and count up on the seven-segment display. Because a
+                            clock counts every 60 seconds, I first used an MSI to
+                            capture the value 9, then the value 6, so it can
+                            count the full 60 seconds.
+                        </p>
+                    </figure>
+                </div>
+
+                <p>
+                    <strong>Note:</strong> The lights at the end of the hex
+                    displays show the numbers in binary, which I used to double
+                    check my work.
+                </p>
+
+                <figure>
+                    <img src="img/clock-auto-reset.png"
+                         alt="Auto reset logic at the top of the clock, with AND gates and buffers feeding the hour displays">
+                    <figcaption>Auto reset logic near the top of the clock.</figcaption>
+                </figure>
+
+                <p>
+                    The auto reset feature (shown above) sends the clock back to
+                    0 after it hits 24 hours. The design also has a push button
+                    at the bottom that resets the whole clock.
+                </p>
+
+                <div class="tags">
+                    Multisim · Digital Logic · MSI Counters · JK Flip-Flops · Seven-Segment Displays
+                </div>
+            </div>
+
+            <!-- CNC PROJECT -->
+            <div class="card cnc">
+                <h3>CNC Machining Project: Bill Cipher from Gravity Falls</h3>
+
+                <figure class="cnc-hero">
+                    <img src="img/cnc-benchmill.jpg"
+                         alt="The BenchMill 6100 CNC machine used for the project">
+                    <figcaption>The BenchMill 6100 used to machine the project.</figcaption>
+                </figure>
+
+                <p>
+                    For my first CNC machining project, I used the BenchMill 6100
+                    to create a carved representation of Bill Cipher, a character
+                    from the television show Gravity Falls. This project
+                    introduced me to CNC machining, G-code programming, and the
+                    process of converting a digital design into physical output.
+                </p>
+
+                <p>
+                    I learned to write G-code using both absolute and incremental
+                    (relative) coordinate positioning to control the tool's
+                    movement along the machining plane. I mapped out the design's
+                    coordinates on paper before transferring the toolpaths into
+                    Intelitek CNC software, where I simulated the machining
+                    process to verify the tool's movements and check my program
+                    for potential errors. I also learned about calculating
+                    appropriate spindle speed based on factors such as the cutting
+                    tool diameter, material, and recommended cutting speed.
+                </p>
+
+                <p>
+                    One of my main challenges was determining when to retract or
+                    lift the cutting tool to prevent overlapping toolpaths and
+                    unintended cuts. To address this, I added comments throughout
+                    my G-code to document each section's function, making the
+                    program easier to understand, troubleshoot, and modify.
+                </p>
+
+                <p>
+                    This project gave me my first hands-on experience with CNC
+                    programming and machining software while strengthening my
+                    understanding of coordinate systems, toolpath planning, and
+                    systematic problem-solving.
+                </p>
+
+                <p class="cnc-progress-label">Project progress: paper drawing → software simulation → final part</p>
+
+                <div class="cnc-progress">
+                    <figure>
+                        <img src="img/cnc-paper-drawing.jpg"
+                             alt="Paper drawing with the design's mapped-out coordinates">
+                        <figcaption>1. Paper drawing with mapped coordinates</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="img/cnc-software-model.jpg"
+                             alt="Intelitek CNC software simulation of the toolpaths">
+                        <figcaption>2. Intelitek software simulation</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="img/cnc-final-model.jpg"
+                             alt="The finished carved part">
+                        <figcaption>3. Final machined part</figcaption>
+                    </figure>
+                </div>
+
+                <div class="tags">
+                    CNC Machining · G-Code · BenchMill 6100 · Intelitek · Toolpath Planning
+                </div>
+            </div>
+
+            <!-- PWM PROJECT -->
+            <div class="card pwm">
+                <h3>PWM Speed and Direction Control of a DC Motor</h3>
+
+                <p>
+                    In this project, I designed and assembled a DC motor control
+                    circuit on a breadboard, combining a 555 timer-based Pulse
+                    Width Modulation (PWM) circuit with a transistor-based
+                    H-bridge to control both motor speed and direction. This
+                    project allowed me to apply my knowledge of circuit design,
+                    electronic components, and motor control while gaining
+                    hands-on experience with robotics and electromechanical
+                    systems.
+                </p>
+
+                <div class="pwm-media">
+                    <figure>
+                        <img src="img/pwm-circuitjs-simulation.png"
+                             alt="CircuitJS simulation of the 555 timer PWM circuit and transistor H-bridge motor driver">
+                        <figcaption>CircuitJS simulation of the PWM circuit and H-bridge.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <div class="coming-soon">
+                            Currently working on the physical breadboard. Coming soon!
+                        </div>
+                        <figcaption>Physical breadboard build</figcaption>
+                    </figure>
+                </div>
+
+                <p>
+                    I constructed a 555 timer oscillator designed to generate a
+                    50 kHz square-wave signal using 1 kΩ and 9.1 kΩ resistors and
+                    a 1.5 nF capacitor. I incorporated a 10 kΩ variable resistor
+                    to adjust the PWM duty cycle between approximately 30% and
+                    70%, controlling the average voltage delivered to the motor
+                    and thereby regulating its speed.
+                </p>
+
+                <p>
+                    To enable bidirectional motor operation, I built an H-bridge
+                    using two TIP31C NPN transistors and two TIP32C PNP
+                    transistors, with 1 kΩ base resistors and 1N4007 flyback
+                    diodes. The transistor arrangement allowed the current
+                    through the motor to be reversed, changing its direction of
+                    rotation. The flyback diodes helped protect the transistors
+                    from voltage spikes generated by the motor's inductive load.
+                </p>
+
+                <p>
+                    By integrating both circuits, I explored how PWM signal
+                    generation and transistor switching work together to regulate
+                    motor speed and direction. This project strengthened my
+                    understanding of electronic circuit construction and the
+                    practical application of power electronics in robotics and
+                    motor-control systems.
+                </p>
+
+                <p>
+                    <strong>Skills Learned:</strong> PWM signal generation, 555
+                    timer circuits, H-bridge design, DC motor speed and direction
+                    control, transistor switching, breadboard prototyping,
+                    circuit analysis, inductive load protection, and electronic
+                    troubleshooting.
+                </p>
+
+                <div class="tags">
+                    555 Timer · PWM · H-Bridge · DC Motors · CircuitJS
+                </div>
+            </div>
+        </section>
+
+
+        <!-- WORK EXPERIENCE -->
+        <section id="experience">
+            <h2>Work Experience</h2>
+
+            <!-- DEPARTMENT OF BUILDINGS -->
+            <div class="card job">
+                <h3>Department of Buildings</h3>
+                <p class="meta">Electrical Inspection and Code Compliance · Study of the 2008 NEC</p>
+
+                <p>
+                    At the Department of Buildings (DOB), I studied and applied
+                    the 2008 National Electrical Code (NEC) to understand
+                    electrical standards, safety requirements, and compliance
+                    procedures. I reviewed electrical plans, permits, and
+                    documentation to verify compliance with the NYC Electrical
+                    Code and safety regulations, and inspected electrical
+                    installations such as wiring, panels, grounding systems, and
+                    service equipment for proper installation and functionality.
+                    I assisted in evaluating power distribution systems in
+                    residential and commercial buildings and helped assess fire
+                    prevention and electrical hazard risks related to improper
+                    installations. I documented inspection findings, corrections,
+                    and approvals in DOB systems, and coordinated with inspectors,
+                    engineers, and contractors to address electrical compliance
+                    issues. The experience gave me exposure to real-world
+                    applications of electrical safety standards and inspection
+                    procedures.
+                </p>
+
+                <div class="job-gallery">
+                    <figure>
+                        <img src="img/dob-nec-2008.jpg"
+                             alt="The 2008 National Electrical Code (NEC) book">
+                        <figcaption>2008 National Electrical Code (NEC)</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="img/dob-breaker-panel.jpg"
+                             alt="Electrical breaker panel">
+                        <figcaption>Breaker panel</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="img/dob-generator-diagram.jpg"
+                             alt="Generator diagram">
+                        <figcaption>Generator diagram</figcaption>
+                    </figure>
+                </div>
+
+                <div class="tags">
+                    NEC 2008 · NYC Electrical Code · Electrical Inspection · Power Distribution · Fire and Electrical Safety
+                </div>
+            </div>
+
+            <!-- ROCK AND SOUL -->
+            <div class="card job">
+                <h3>Rock and Soul DJ Equipment and Records</h3>
+                <p class="meta">Professional DJ and Audio Equipment · Sales, Installation, and Inventory</p>
+
+                <p>
+                    At Rock and Soul, I assisted customers with the selection,
+                    demonstration, and sales of professional DJ and audio
+                    equipment, including Pioneer DJ CDJ-3000 media players,
+                    mixers, controllers, speakers, and related electronic
+                    systems. I explained technical product features and supported
+                    sales and marketing efforts by recommending equipment tailored
+                    to customers' performance and installation needs. I delivered,
+                    installed, configured, calibrated, and tested professional DJ
+                    and audio systems throughout all five boroughs of New York
+                    City, ensuring proper system operation and customer
+                    satisfaction, and performed troubleshooting and basic
+                    diagnostics on audio and electronic equipment during
+                    installations and service visits to identify and resolve
+                    technical issues. In the store, I organized and cataloged an
+                    inventory of vinyl records spanning more than 50 years,
+                    improving inventory management and accessibility, and
+                    maintained showroom displays and inventory of professional
+                    audio equipment, accessories, cables, and electronic
+                    components. The job strengthened my technical communication,
+                    problem-solving, customer service, and teamwork skills across
+                    both in-store operations and field installations.
+                </p>
+
+                <div class="job-gallery">
+                    <figure>
+                        <img src="img/rs-mixer-back.jpg"
+                             alt="Back of a DJ mixer showing the channel inputs and outputs">
+                        <figcaption>Mixer back panel: channel inputs and outputs</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="img/rs-cdj-3000.jpg"
+                             alt="Pioneer DJ CDJ-3000 media player">
+                        <figcaption>Pioneer DJ CDJ-3000</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="img/rs-system-setup.jpg"
+                             alt="DJ and mixer system I set up on the job with two subwoofers, full range speakers, mid range speakers, and tweeters">
+                        <figcaption>System I set up: 2 subwoofers, full range, mid range, and tweeters</figcaption>
+                    </figure>
+                </div>
+
+                <div class="tags">
+                    Pioneer DJ CDJ-3000 · Audio Installation · Troubleshooting · Customer Service · Inventory Management
+                </div>
+            </div>
+        </section>
+
+
+        <!-- RESEARCH -->
+        <section id="research">
+            <h2>Research</h2>
+
+            <!-- GEOMAGNETIC STORMS RESEARCH -->
+            <div class="card research">
+                <h3>Analyzing the Impact of Geomagnetic Storms on Flight Disruptions</h3>
+                <p class="meta">NYC Science &amp; Engineering Fair (NYCSEF) Finalist | Physics · Presented at NYU Tandon</p>
+
+                <p>
+                    Selected as a finalist at NYCSEF for this research project,
+                    presented at NYU Tandon. As part of a collaborative team with
+                    the JFK Redevelopment Aviation &amp; Aeronautics Academy and York
+                    College (CUNY), we analyzed 2023–2024 JFK–LAX flight data using
+                    linear regression to examine correlations between geomagnetic
+                    storms and flight delays, highlighting the role of space
+                    weather in aviation safety.
+                </p>
+
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-num">108 of 670</span>
+                        <span class="stat-label">finalists chosen from citywide competitors</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">2nd Place</span>
+                        <span class="stat-label">Physics Section</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">NASA</span>
+                        <span class="stat-label">Earth System Science Project Award</span>
+                    </div>
+                </div>
+
+                <h4>Background</h4>
+
+                <p>
+                    Geomagnetic storms result from intense solar activity such as
+                    solar flares, which are known to produce fierce emission of
+                    electromagnetic radiation in the Sun's atmosphere. When
+                    coupled with other eruptive solar events like coronal mass
+                    ejections, solar storms can disrupt the Earth's magnetosphere
+                    and ionosphere.
+                </p>
+
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-num">3,773</span>
+                        <span class="stat-label">JFK to LAX flights, 2023–2024</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">30.4%</span>
+                        <span class="stat-label">of those flights were delayed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">~50</span>
+                        <span class="stat-label">geomagnetic storms in the same period</span>
+                    </div>
+                </div>
+
+                <h4>Purpose</h4>
+                <p>
+                    This study investigates the potential impact of geomagnetic
+                    storms on flight times and delays by analyzing deviations from
+                    scheduled flight times and delayed flights. The data was
+                    generously provided by the Port Authority of NY and NJ. Possible
+                    reasons for delays include disruptions to sensitive aviation
+                    systems such as navigation, GPS, and communication systems,
+                    which are critical for maintaining flight paths.
+                </p>
+
+                <h4>Method</h4>
+                <p>
+                    The data included the date and time of each flight, whether the
+                    flight was delayed, and the length of the delay. The reason for
+                    each delay was not in the dataset and will be incorporated into
+                    future research. I used a linear regression model to analyze
+                    the flight and geomagnetic storm data and determine whether
+                    delays correlated with storms.
+                </p>
+
+                <h4>Results</h4>
+                <p>
+                    No strong correlations were found between flight delay and any
+                    of these geomagnetic storm parameters:
+                </p>
+                <ul>
+                    <li>Storm distance and storm speed</li>
+                    <li>Planetary K-Index (Kp) maximum</li>
+                    <li>North-South orientation of the interplanetary magnetic field (Bz)</li>
+                    <li>Equivalent amplitude of magnetic activity (Ap)</li>
+                    <li>Total strength of the interplanetary magnetic field (Bt)</li>
+                </ul>
+                <p>
+                    This suggests delay is not significantly influenced by these
+                    parameters. However, this could reflect the very limited public
+                    data on geomagnetic storms. In the future, the model will be
+                    reevaluated and more data will be gathered to build a more
+                    precise model.
+                </p>
+
+                <div class="link-row">
+                    <a class="link-btn" href="https://gsa.confex.com/gsa/2024AM/meetingapp.cgi/Person/292114" target="_blank" rel="noopener noreferrer">View the publication (GSA 2024)</a>
+                </div>
+
+                <div class="tags" style="margin-top: 20px;">
+                    Space Weather · Linear Regression · Data Analysis · Aviation Safety
+                </div>
+            </div>
+
+            <!-- 6TH SENSE -->
+            <div class="card research">
+                <h3>6th Sense: Wearable Assistive System for the Visually Impaired</h3>
+                <p class="meta">Hackathon Winner · Hardware, CAD, and Real-Time Object Detection</p>
+
+                <p>
+                    Built a wearable assistive system designed to help users
+                    understand and navigate their environment in real time. Unlike
+                    traditional tools that only detect objects, this system
+                    focuses on interpreting the environment and deciding what
+                    information actually matters. It builds a live sense of space,
+                    identifies key objects like people, obstacles, and open paths,
+                    and translates that into clear guidance through haptics and
+                    audio when needed.
+                </p>
+
+                <h4>Research and Development</h4>
+                <p>
+                    We researched other devices and completed a landscape analysis
+                    to compare existing solutions and identify gaps, then used
+                    those findings to refine our device to better help visually
+                    impaired users. The system was developed using CAD modeling in
+                    Autodesk Inventor, software for real-time object detection, and
+                    that landscape analysis.
+                </p>
+
+                <h4>Current Status and Next Steps</h4>
+                <p>
+                    The current prototype can detect and list objects in real time.
+                    Ongoing work is focused on improving decision making so the
+                    system can actively guide users and help locate items. Next
+                    steps include:
+                </p>
+                <ul>
+                    <li>Refining the hardware into a wearable design</li>
+                    <li>Improving accuracy and scene understanding</li>
+                    <li>Integrating more advanced intelligence for more precise and useful guidance</li>
+                </ul>
+                <p>
+                    The goal is to turn this into a practical, marketable product
+                    that supports visually impaired individuals with greater
+                    independence and awareness.
+                </p>
+
+                <div class="link-row">
+                    <a class="link-btn" href="https://docs.google.com/presentation/d/1YI3Doo8t9_pl3q80NyetmQPxdjBOwwtj/edit" target="_blank" rel="noopener noreferrer">View the slides</a>
+                </div>
+
+                <div class="tags" style="margin-top: 20px;">
+                    Autodesk Inventor · Object Detection · Haptic Feedback · Assistive Technology
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <!-- LICENSES, CERTIFICATIONS & AWARDS -->
+        <section id="awards">
+            <h2>Licenses, Certifications &amp; Awards</h2>
+
+            <table class="cred-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Credential</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="cred-name">1st Place: Brooklyn Tech Hackathon | 6th Sense</td>
+                        <td class="cred-type"><span class="badge">Award</span></td>
+                        <td>Awarded first place for developing 6th Sense, an assistive technology project combining hardware, CAD design, and haptic feedback to help users navigate their surroundings.</td>
+                    </tr>
+                    <tr>
+                        <td class="cred-name">NASA MAA STEM Education Project Award</td>
+                        <td class="cred-type"><span class="badge">Award</span></td>
+                        <td>Recognized for demonstrating strong STEM knowledge, technical innovation, and problem-solving through an engineering project.</td>
+                    </tr>
+                    <tr>
+                        <td class="cred-name">YouScience Digital Electronics Award</td>
+                        <td class="cred-type"><span class="badge">Award</span></td>
+                        <td>Recognized for demonstrating knowledge and skills in digital electronics, circuits, and electronic systems.</td>
+                    </tr>
+                    <tr>
+                        <td class="cred-name">NOCTI Mechatronics: Level 1 Assessment</td>
+                        <td class="cred-type"><span class="badge">Certification</span></td>
+                        <td>Demonstrated foundational skills in mechatronics, electronics, mechanical systems, controls, and technical problem-solving.</td>
+                    </tr>
+                    <tr>
+                        <td class="cred-name">Autodesk Inventor Certified</td>
+                        <td class="cred-type"><span class="badge">Certification</span></td>
+                        <td>Demonstrated proficiency in Autodesk Inventor for 3D CAD modeling, mechanical design, and engineering documentation.</td>
+                    </tr>
+                    <tr>
+                        <td class="cred-name">OSHA 30-Hour Construction Safety and Health</td>
+                        <td class="cred-type"><span class="badge">Certification</span></td>
+                        <td>Completed 30 hours of training covering construction safety, workplace hazards, and OSHA safety standards.</td>
+                    </tr>
+                    <tr>
+                        <td class="cred-name">RIT PLTW CIM Endorsement</td>
+                        <td class="cred-type"><span class="badge">Endorsement</span></td>
+                        <td>Earned recognition through the Rochester Institute of Technology (RIT) Project Lead The Way (PLTW) Computer Integrated Manufacturing (CIM) program by successfully completing the course and End-of-Course assessment. Demonstrated knowledge of computer-integrated manufacturing, CAD/CAM, automation, robotics, and engineering design.</td>
+                    </tr>
+                    <tr>
+                        <td class="cred-name">Brooklyn Tech CTE Endorsement</td>
+                        <td class="cred-type"><span class="badge">Endorsement</span></td>
+                        <td>Earned a Career and Technical Education (CTE) endorsement from Brooklyn Technical High School, demonstrating completion of a rigorous technical education program and development of practical skills in engineering, technology, problem-solving, and career readiness.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        <!-- FOOTER: TITLE BLOCK -->
+        <footer>
+            <div class="title-block">
+
+                <div class="tb-cell tb-name">
+                    <span class="tb-label">Drawn by</span>
+                    <span class="tb-value">Harryram Persaud</span>
+                </div>
+
+                <div class="tb-cell">
+                    <span class="tb-label">Contact</span>
+                    <span class="tb-value"><a href="mailto:harrypersaud100@gmail.com">harrypersaud100@gmail.com</a></span>
+                </div>
+
+                <div class="tb-cell">
+                    <span class="tb-label">Rev</span>
+                    <span class="tb-value">A, October 2026</span>
+                </div>
+
+                <div class="tb-cell last-row">
+                    <span class="tb-label">Location</span>
+                    <span class="tb-value">New York</span>
+                </div>
+
+                <div class="tb-cell last-row">
+                    <span class="tb-label">Also on</span>
+                    <span class="tb-value"><a href="https://www.linkedin.com/in/harryrampersaud" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+                </div>
+
+            </div>
+
+            <p class="copyright">© 2026 Harryram Persaud. All rights reserved.</p>
+        </footer>
+
+    </div>
+    </main>
+
+</body>
+</html>
